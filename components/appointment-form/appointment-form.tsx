@@ -46,7 +46,7 @@ import {
 import { toast } from 'sonner';
 import { createAppointment, updateAppointment } from '@/app/actions';
 import { useEffect, useState } from 'react';
-import { Appointment } from '@/app/generated/prisma/edge';
+import type { Appointment } from '@/app/generated/prisma/client';
 
 const appointmentFormSchema = z
   .object({
