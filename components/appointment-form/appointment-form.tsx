@@ -54,14 +54,9 @@ const appointmentFormSchema = z
     petName: z.string().min(2, { message: 'O nome do pet é obrigatório' }),
     phone: z.string().min(11, { message: 'O telefone é obrigatório' }),
     description: z.string().min(2, { message: 'A descrição é obrigatória' }),
-    scheduleAt: z
-      .date({
-        required_error: 'A data é obrigatória',
-        invalid_type_error: 'A data é obrigatória',
-      })
-      .min(startOfToday(), {
-        message: 'A data não pode ser no passado',
-      }),
+    scheduleAt: z.date({ error: 'A data é obrigatória' }).min(startOfToday(), {
+      message: 'A data não pode ser no passado',
+    }),
     time: z.string().min(1, { message: 'O horário é obrigatório' }),
   })
   .refine(
