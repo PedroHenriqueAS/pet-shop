@@ -1,7 +1,6 @@
-
 generator client {
-  provider = "prisma-client-js"
-  output   = "app/generated/prisma"
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
 }
 
 datasource db {
@@ -9,10 +8,10 @@ datasource db {
 }
 
 model Appointment {
-  id String @id @default(cuid())
-  tutorName String
-  petName String
-  phone String
+  id          String   @id @default(cuid())
+  tutorName   String
+  petName     String
+  phone       String
   description String
   scheduledAt DateTime
 
